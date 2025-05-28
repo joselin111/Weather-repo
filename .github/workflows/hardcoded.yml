@@ -15,13 +15,4 @@ jobs:
           pip3 install requests
 
       - name: Run weather.py with hardcoded key
-        run: |
-          echo 'import requests' > temp.py
-          echo 'API_KEY = "f35455d89339b81fef34e9664c107d1f"' >> temp.py
-          echo 'city = "London"' >> temp.py
-          echo 'url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"' >> temp.py
-          echo 'response = requests.get(url)' >> temp.py
-          echo 'data = response.json()' >> temp.py
-          echo 'print(f"Current weather in {city}: {data[\"main\"][\"temp\"]}°C, {data[\"weather\"][0][\"description\"]}")' >> temp.py
-          python3 temp.py
-
+        run: python3 weather.py
